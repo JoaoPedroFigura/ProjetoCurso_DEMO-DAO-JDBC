@@ -7,9 +7,12 @@ import entities.Seller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Program {
     static void main() {
+
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("=== TEST 1: seler findById ===");
 
@@ -42,6 +45,14 @@ public class Program {
         seller.setName("Martha Whaine");
         sellerDao.update(seller);
         System.out.println("Update completed");
+
+        System.out.println("=== TEST 6: seler delete ===");
+        System.out.println("Enter id for delete test: ");
+        int id = sc.nextInt();
+        sellerDao.deleteById(id);
+        System.out.println("Delete completed");
+
+        sc.close();
 
     }
 
